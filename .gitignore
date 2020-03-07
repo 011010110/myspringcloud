@@ -1,6 +1,20 @@
+<<<<<<< HEAD
 /.idea/
 /springcloud-consumer/.mvn/
 /springcloud-config/.mvn/
 /springcloud-provider/.mvn/
 /eureka-master/.mvn/
 /eureka-master/.mvn
+=======
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+.mvn/wrapper/maven-wrapper.jar
+>>>>>>> 526db817710d2e92fdad1bf0970e311e632fad5b
