@@ -3,3 +3,4 @@
 /springcloud-config/.mvn/
 /springcloud-provider/.mvn/
 /eureka-master/.mvn/
+/eureka-master/.mvn
