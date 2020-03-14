@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: springcloud-consumer-hello
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: helth,info
+
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8082/eureka #注册中心地址
+
+info:
+  company.name: org.jiang
+  company.address: 四川成都
+  description: hello-consumer

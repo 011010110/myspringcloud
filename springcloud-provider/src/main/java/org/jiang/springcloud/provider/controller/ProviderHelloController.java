@@ -1,6 +1,5 @@
-package org.jiang.springcloud.consumer.controller;
+package org.jiang.springcloud.provider.controller;
 
-import com.fasterxml.jackson.databind.json.JsonMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
@@ -22,7 +21,7 @@ import java.util.Map;
  */
 @RefreshScope
 @RestController
-public class HelloController {
+public class ProviderHelloController {
 
     @Value("${message:hello default!}")
     private String message;
@@ -49,7 +48,6 @@ public class HelloController {
             @PathVariable String applicationName) {
         return this.discoveryClient.getInstances(applicationName);
     }
-
     @RequestMapping("/service-instances/escription")
     public List<String> getDescription(){
         List<String> services = this.discoveryClient.getServices();

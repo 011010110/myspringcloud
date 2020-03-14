@@ -1,0 +1,22 @@
+#eureka 与zookeeper
+  #eureka 偏向ap原则(强调高可用，适当牺牲一致性)，zookeeper偏向cp原则(强调一致性，适当牺牲高可用)，
+
+#eureka 自我保护机制：
+    #当心跳检测低于阀值时（每分钟发送心跳次数），将会开启自我保护机制，
+    # 自我保护机制：服务列表可以增加，查询但是不能删除
+    # 当心跳检测恢复正常后，自我保护机制将关闭
+server:
+  port: 8082
+eureka:
+  instance:
+    preferIpAddress: true
+#  server:
+#    enable-self-preservation: false  #关闭自我保护机制，建议不关闭
+  client:
+    register-with-eureka: false #是否将自己注册到EurrkeServer，默认为true
+    fetch-registry: false #表示是否从EurekaServer获取注册信息，默认为true，表示需要从其他server同步信息
+    service-url:
+      defaultZone: http://localhost:8082/eureka #暴露服务中心地址,如果是集群，则直接添加多个服务中心地址，并用逗号分隔
+spring:
+  application:
+    name: springcloud-eureka
